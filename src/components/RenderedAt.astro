@@ -1,0 +1,9 @@
+---
+import { render } from "astro/dist/runtime/server";
+
+const renderedAt = new Date()
+---
+<section>
+  <h3>Rendered time</h3>
+  <p>{renderedAt.toLocaleString('ja-JP')}</p>
+</section>

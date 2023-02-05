@@ -1,15 +1,15 @@
 ---
+import IpAddress from '../components/IpAddress.astro';
+import RenderedAt from '../components/RenderedAt.astro';
 import Layout from '../layouts/Layout.astro';
 
 export const prerender = true
-const renderedAt = new Date()
-const ipAddress = await (await fetch('https://api.ipify.org?format=json')).json()
 ---
 
 <Layout title="Astro Hybrid Rendering Example">
 	<h1>Astro Hybrid rendering example</h1>
 	<h2>Enable prerender</h2>
 	<a href="/disable_prerender">Disable prerender</a>
-	<p>Rendered at: {renderedAt.toLocaleString('ja-JP')}</p>
-	<p>IP address: {ipAddress.ip}</p>
+	<RenderedAt />
+	<IpAddress />
 </Layout>
